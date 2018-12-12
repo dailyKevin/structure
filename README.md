@@ -5,7 +5,7 @@
 <img src='https://cdn.rawgit.com/facebook/create-react-app/27b42ac/screencast.svg' width='600' alt='npm start'>
 </p>	
 <p align='center'>
-<img src='https://drive.google.com/file/d/1aQAHsVBBzkkbWI6HsKJOXF1HF8jFitZC/view' width='600' alt='npm start'>
+<img src='https://lh3.googleusercontent.com/-JTVd7kZxOo-Qn_Yjf4qWRHnJmllhsget-1JloLwYsuzJfnEiaF07Z-HB0Ki67vMh_ImV4K8aGDcwOCsHpfR=w3316-h2442-rw' width='600' alt='npm start'>
 </p>
 	이중 Front-end에서 사용할 것은 
 		○ React: view
