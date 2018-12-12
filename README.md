@@ -19,6 +19,13 @@
 
 # 앱의 전체구성
 
+## create-react-app 으로 기본 뼈대 구성
+```sh
+npx create-react-app my-app
+cd my-app
+npm start
+```
+
 
 		○ UI React
 		○ State Container Redux, Side Effect관리 Redux-saga
