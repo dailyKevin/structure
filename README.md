@@ -1,9 +1,11 @@
 # Skill Stack
 	React 기술에 많은 공헌을 하고있는 Airbnb의 스킬 스택 (https://stackshare.io/airbnb/airbnb) 을 기반으로 설계
 
-	![alternativetext](https://lc-imageresizer-live-s.legocdn.com/resize/city_arctic_2hy2018_legodotcom_336x448?mode=portrait&size=large&ratio=1&imageUrl=https%3A%2F%2Fwww.lego.com%2Fr%2Fwww%2Fr%2Fcatalogs%2F-%2Fmedia%2Fcatalogs%2Fthemes%2Ffranchises%2Ftheme%2520cards%25202018%2F2hy%2Fcity_arctic_2hy2018_legodotcom_336x448.jpg%3Fl.r%3D-337897485)
 	<p align='center'>
 <img src='https://cdn.rawgit.com/facebook/create-react-app/27b42ac/screencast.svg' width='600' alt='npm start'>
+</p>	
+<p align='center'>
+<img src='https://drive.google.com/file/d/1aQAHsVBBzkkbWI6HsKJOXF1HF8jFitZC/view' width='600' alt='npm start'>
 </p>
 	이중 Front-end에서 사용할 것은 
 		○ React: view
