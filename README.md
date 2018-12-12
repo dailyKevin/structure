@@ -1,9 +1,6 @@
 # Skill Stack
-	React 기술에 많은 공헌을 하고있는 Airbnb의 스킬 스택 (https://stackshare.io/airbnb/airbnb) 을 기반으로 설계
+	React 기술에 많은 공헌을 하고있는 Airbnb의 스킬 스택 (https://stackshare.io/airbnb/airbnb) 을 기반으로 설계	
 
-	<p align='center'>
-<img src='https://cdn.rawgit.com/facebook/create-react-app/27b42ac/screencast.svg' width='600' alt='npm start'>
-</p>	
 <p align='center'>
 <img src='https://lh3.googleusercontent.com/-JTVd7kZxOo-Qn_Yjf4qWRHnJmllhsget-1JloLwYsuzJfnEiaF07Z-HB0Ki67vMh_ImV4K8aGDcwOCsHpfR=w3316-h2442-rw' width='600' alt='npm start'>
 </p>
@@ -25,6 +22,9 @@ npx create-react-app my-app
 cd my-app
 npm start
 ```
+<p align='center'>
+<img src='https://cdn.rawgit.com/facebook/create-react-app/27b42ac/screencast.svg' width='600' alt='npm start'>
+</p>
 
 
 		○ UI React
