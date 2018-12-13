@@ -62,7 +62,12 @@
 	<img src='./concern.png' width='600' alt='app skill stack'>
 	</p>
 
-		React.js는 컴포넌트로써 마크업과 뷰의 로직을 createClass()의 안에 작성합니다. 하지만 마크업은 HTML으로 뷰의 로직은 자바스크립트로 나눠서 작성하는 기존의 방식을 취하지 않아 마음에 들지 않는 사람도 있을 것 같습니다. 이 대해 React.js의 개발자인 Pete Hunt는 “그것은 관심사의 분리(Separation of concerns)가 아니라 기술의 분리(Speparation of technologies)”라며 마크업과 뷰의 로직은 긴밀해야 한다고 언급했습니다. 거기에 템플릿의 문법으로 불필요하게 코드를 작성하는 것보다 자바스크립트로 작성하는 것이 더 좋다고 말하고 있습니다.
+	React.js는 컴포넌트로써 마크업과 뷰의 로직을 createClass()의 안에 작성합니다. 하지만 마크업은 HTML으로 뷰의 로직은 자바스크립트로 나눠서 작성하는 기존의 방식을 취하지 않아 마음에 들지 않는 사람도 있을 것 같습니다. 
+	
+	이 대해 React.js의 개발자인 Pete Hunt는
+	> “그것은 관심사의 분리(Separation of concerns)가 아니라 기술의 분리(Speparation of technologies)”라며 
+	> 마크업과 뷰의 로직은 긴밀해야 한다고 언급했습니다. 거기에 템플릿의 문법으로 불필요하게 코드를 작성하는 것보다  
+	> 자바스크립트로 작성하는 것이 더 좋다고 말하고 있습니다.
 
 	<p align='center'>
 	<img src='./data_event.png' width='600' alt='app skill stack'>
