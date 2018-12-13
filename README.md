@@ -124,7 +124,18 @@ MVC는 확장이 어렵고 거대한 시스템에 어울리지 않는다고 페�
 <img src='./flux.png' width='600' alt='redux data flow'>
 </p>
 
-페이스북은 Flux 아키텍처를 발표한 후 Flux에 대한 구현체도 공개했는데, 이 구현체에는 디스패처만 구현되어 있어 완전한 Flux 프레임워크라 부르기엔 다소 무리가 있었습니다. 2015년 ​10월에 발표한 2.1.0 버전에서 스토어를 지원하기 전까지는 사실상 완전한 공식 Flux 구현체가 없던 셈이다. 이 시기에 많은 Flux 구현체들이 나타났는데, 그 중 하나가 Redux입니다.
+페이스북은 Flux 아키텍처를 발표한 후 Flux에 대한 구현체도 공개했는데, 이 구현체에는 디스패처만 구현되어 있어 완전한 Flux 프레임워크라 부르기엔 다소 무리가 있었습니다. 2015년 ​10월에 발표한 2.1.0 버전에서 스토어를 지원하기 전까지는 사실상 완전한 공식 Flux 구현체가 없던 셈이다. 이 시기에 많은 Flux 구현체들이 나타났는데, 중 하나가 Redux입니다.
+
+## Redux의 3가지 원칙
+- Single source of truth
+- State is read-only
+- Changes are made with pure functions
+
+```
+That's it! Now you know what Redux is all about.
+```
+
+---
 
 `React`로만 컴포넌트를 작성한다면 처음시작은 이렇습니다.
 <p align='center'>
