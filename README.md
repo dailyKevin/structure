@@ -73,7 +73,7 @@
 	<img src='./data_event.png' width='600' alt='app skill stack'>
 	</p>
 	
-	상위 컴포넌트에서 하위 컴포넌트로만 데이터 이동 가능한 `단방향 데이터 플로우`
+	상위 컴포넌트에서 하위 컴포넌트로만 데이터 이동 가능한 `단방향 데이터 플로우`. 단방향 아키텍쳐의 서브 컴포넌트들이 생긴 모양과 전체 모양이 같은 방식일 떄 `프랙탈(fractal)` 이라고 합니다. 프랙탈 아키텍쳐에서는 전체가 다른 더 큰 어플리케이션의 컴포넌트로 패키징될 수도 있습니다. 비 프랙탈 아키텍쳐에서는 반복되지 않는 부분들을 `orchestrators` 라고 부르며 이들은 계층적 구성을 가지고 있습니다.
 
 	## Virtual DOM
 
@@ -104,11 +104,6 @@
 	이 부분에서 Virtual DOM의 장점이 두드러집니다 만약에 뷰에 변화가 있다면, 그 변화는 실제 DOM 에 적용되기전에 가상의 DOM 에 먼저 적용시키고 그 최종적인 결과를 실제 DOM 으로 전달해줍니다. 이로써, 브라우저 내에서 발생하는 연산의 양을 줄여 성능이 개선되는 것입니다.
 
 # Redux: A predictable state container for JavaScript apps.
-
-<p align='center'>
-<img src='./redux-data-flow.gif' width='600' alt='redux data flow'>
-</p>
-
 MVC는 확장이 어렵고 거대한 시스템에 어울리지 않는다고 페이스북은 결론을 내렸습니다.
 
 이유는 새로운 기능 추가 시 시스템의 복잡도가 기하 급 수적으로 증가하여 개발자는 기존 기능에 대한 영향을 주지 않을지에 대한 불안감을 주게 됩니다. 모델(Model)과 뷰(View)의 수가 커지고 데이터의 흐름이 양방향으로 이루어질 수록 복잡도는 더욱 증가하고 디버깅 및 코드를 이해하기 어려워지기 때문입니다.
@@ -119,17 +114,59 @@ MVC는 확장이 어렵고 거대한 시스템에 어울리지 않는다고 페�
 
 이에 페이스북은 "좀더 예측 가능하도록 코드 구조화"에 대한 목표로 "데이터 흐름이 단방향인 시스템 아키텍처" `Flux`를 제안합니다.
 
-
 <p align='center'>
 <img src='./flux.png' width='600' alt='redux data flow'>
 </p>
 
-페이스북은 Flux 아키텍처를 발표한 후 Flux에 대한 구현체도 공개했는데, 이 구현체에는 디스패처만 구현되어 있어 완전한 Flux 프레임워크라 부르기엔 다소 무리가 있었습니다. 2015년 ​10월에 발표한 2.1.0 버전에서 스토어를 지원하기 전까지는 사실상 완전한 공식 Flux 구현체가 없던 셈이다. 이 시기에 많은 Flux 구현체들이 나타났는데, 중 하나가 Redux입니다.
+# FLUX
+Flux가 단방향 사용자 인터페이스 아키텍쳐의 선구자는 아니지만 적어도 인기도 면에서는 현재 가장 유명한 단방향 아키텍쳐입니다.
+
+## 구성요소
+- Stores: 비즈니스 데이터와 상태의 관리자
+- View: 리액트 컴포넌트들의 계층 구조
+- Actions: View에서 트리거된 사용자 이벤트에 의해 생성된 이벤트
+- Dispatcher: 모든 액션에 대한 이벤트 버스
+
+<p align='center'>
+<img src='./flux-ar.jpg' width='600' alt='redux data flow'>
+</p>
+
+	특징:
+
+	Dispatcher. 이벤트 버스이기 때문에 싱글톤입니다. 많은 Flux 변종들이 dispatcher에 대한 필요성을 삭제하고, 다른 단방향 아키텍쳐들은 dispatcher와 같은 역할을 하는 것을 가지고 있지 않습니다.
+
+	오직 View만이 구성 가능한 컴포넌트를 가지고 있습니다.
+
+	사용자 이벤트 핸들러들은 렌더링 단계에서 정의됩니다. 다른 말로 하자면 리액트 컴포넌트의 render() 함수는 사용자와의 상호작용(렌더링과 사용자 이벤트 핸들러)의 방향을 조종합니다. 예: onClick={this.clickHandler}.
+
+
+# Redux
+Redux는 싱글톤 Dispatcher가 싱글톤 Store로 적용된 Flux의 변종 중 하나입니다. Store는 더 이상 바닥부터 다 만드는 것이 아니라 주어진 store factory의 reducer 함수에 의해 생성됩니다.
+
+## 구성요소
+- Singleton Store: 상태를 관리하고 dispatch(action) 함수를 가지고 있습니다
+- Provider: React나 Angular같은 “View” 프레임워크를 사용하는 Store에 대한 구독자(subscriber)입니다
+- Actions: Provider에서 생성된 사용자 이벤트들에 의해 생성된 이벤트입니다
+- Reducers: 이전 상태의 순수 함수와 새로운 상태에 대한 액션입니다
+
+<p align='center'>
+<img src='./redux-ar.jpg' width='600' alt='redux data flow'>
+</p>
+
+	특징:
+
+	Store를 위한 Factory. Store는 reducer 함수들의 구성을 인자로 받는 createStore() 팩토리 함수를 사용해서 생성됩니다. 또한 미들웨어 함수를 인자로 받는 메타 팩토리 함수 applyMiddleware()도 존재합니다. 미들웨어(Middleware)는 store의 dispatch() 함수와 추가적으로 연결된 기능들을 오버라이딩하는 매커니즘입니다.
+
+	Provider. Redux는 UI 프로그램을 만드는데에 사용된 “View” 프레임워크에 대한 고집이 없습니다. 그 프레임워크는 React, Angular 등 무엇이든 될 수 있습니다. 이 아키텍쳐의 문맥을 읽어보면 “View”는 UI 프로그램을 의미합니다. Flux처럼 Redux도 디자인적으론 프랙탈이지 않고 Store가 orchestrator가 됩니다.
 
 ## Redux의 3가지 원칙
 - Single source of truth
 - State is read-only
 - Changes are made with pure functions
+
+<p align='center'>
+<img src='./redux-data-flow.gif' width='600' alt='redux data flow'>
+</p>
 
 ```
 That's it! Now you know what Redux is all about.
